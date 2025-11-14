@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Loving v. Virginia (1967) — Interactive Legal English Project</title>
+<style>
+  body { 
+    font-family: "Times New Roman", "微软雅黑", serif; 
+    background:#fafafa; 
+    margin:36px; 
+    color:#222; 
+    line-height: 1.6;
+  }
+  header { text-align:center; margin-bottom:18px; }
+  h1 { color:#3B3B98; margin:0; font-size:32px; }
+  h2 { color:#2C2C54; border-left:5px solid #706fd3; padding-left:10px; margin-top:22px; font-size:24px; }
+  h3 { margin-top:12px; font-size:20px; }
+  button { margin:10px 0; padding:8px 16px; background:#706fd3; color:white; border:none; border-radius:4px; cursor:pointer; font-size:16px; }
+  button:hover { background:#474787; }
+  .content { margin:12px 0 22px 0; padding:18px; background:white; border-radius:8px; box-shadow:0 2px 6px rgba(0,0,0,0.08); }
+  .hidden { display:none; }
+  .result { margin-top:8px; color:#1e272e; font-weight:bold; }
+  input[type=text] { padding:8px; width:60%; border:1px solid #ccc; border-radius:4px; font-size:16px; }
+  .term { margin:6px 0; }
+  .quiz-item { margin:10px 0; padding:12px; border-radius:6px; background:#f7f7ff; }
+  footer { margin-top:24px; font-size:13px; color:#555; }
+  a { color:#3867d6; }
+  
+  /* 新增样式 */
+  .network-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin: 15px 0;
+  }
+  .network-node {
+    background: #f0f0ff;
+    border: 1px solid #706fd3;
+    border-radius: 8px;
+    padding: 12px;
+    flex: 1 1 200px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  .network-node h4 {
+    margin-top: 0;
+    color: #3B3B98;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 5px;
+  }
+  .correct-answer {
+    color: #27ae60;
+    font-weight: bold;
+  }
+  .incorrect-answer {
+    color: #e74c3c;
+    font-weight: bold;
+  }
+  .quote {
+    font-style: italic;
+    background: #f9f9f9;
+    padding: 10px;
+    border-left: 3px solid #706fd3;
+    margin: 10px 0;
+  }
+  .highlight {
+    background-color: #fffacd;
+    padding: 2px 4px;
+    border-radius: 3px;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Designer: 冯莉</h1>
+  <p><em>Loving v. Virginia (1967) — Interactive Legal English Project</em></p>
+</header>
+
+<h2>1. Design Tools, Methods, and Process</h2>
+<div class="content">
+  <h3>Tools</h3>
+  <ol>
+    <li><b>AI:</b> DeepSeek — for creating the HTML file</li>
+    <li><b>AI:</b> 豆包 — for transferring the HTML file into a link</li>
+    <li><b>Browser:</b> Chrome / Safari / Edge — for testing and preview</li>
+    <li><b>Assets:</b> External link to Library of Congress PDF for the original opinion</li>
+  </ol>
+
+  <h3>Methods</h3>
+  <ol>
+    <li><b>Study aid:</b> The main purpose is to assist users in learning</li>
+    <li><b>Interactivity:</b> Clickable buttons, corpus searching, quiz feedback</li>
+    <li><b>Appearance:</b> Minimalism style, modular structure, serial numbers & fonts</li>
+    <li><b>Content optimization:</b> Match current study topics, external links, optimized feedback, associative corpus design</li>
+  </ol>
+
+  <h3>Process (step-by-step)</h3>
+  <ol>
+    <li><b>Planning:</b> Identify assignment requirements — interaction, bilingual glossary, opinion excerpts, and quiz</li>
+    <li><b>Drafting:</b> Prepare text content and select a short excerpt to display inline while linking to the official PDF for full text</li>
+    <li><b>Implementation:</b> Code HTML structure, CSS styling, and JavaScript functions for search, toggle, and quiz grading</li>
+    <li><b>AI Enhancement:</b> Use DeepSeek to generate HTML and modify with 豆包 to create a link</li>
+    <li><b>Testing:</b> Manually test interactions on multiple browsers and fix layout or script bugs</li>
+    <li><b>Packaging:</b> Save the single HTML file and compress into a .zip for submission</li>
+  </ol>
+
+  <h3>Design rationale</h3>
+  <p>The page prioritizes readability and interactivity for classroom use: quick-look excerpts, a direct link to the official opinion, a bilingual glossary for language learners, and an auto-graded quiz for self-assessment.</p>
+</div>
+
+<h2>2. Court Opinion Full Text</h2>
+<div class="content">
+  <p><strong>Inline excerpt (Opinion of the Court):</strong></p>
+  <p>
+    This case presents a constitutional question never addressed by this Court: whether a state law prohibiting marriage solely on the basis of racial classifications violates the Equal Protection and Due Process Clauses of the Fourteenth Amendment.
+  </p>
+  <div id="fullText" class="hidden">
+    <p>Marriage is one of the "basic civil rights of man," fundamental to our very existence and survival. To deny this freedom on so unsupportable a basis as the racial classifications embodied in these statutes is surely to deprive all the State's citizens of liberty without due process of law. The Fourteenth Amendment requires that the freedom of choice to marry not be restricted by invidious racial discriminations. Under our Constitution, the freedom to marry, or not marry, a person of another race resides with the individual and cannot be infringed by the State.</p>
+    <p>(The complete official opinion text is long. For the official full text — including the opinion authored by Chief Justice Warren — please use the link below to the Library of Congress PDF.)</p>
+  </div>
+  <button onclick="toggleContent('fullText')">Show / Hide Inline Full Text Excerpt</button>
+  <p>📄 <a href="https://tile.loc.gov/storage-services/service/ll/usrep/usrep388/usrep388001/usrep388001.pdf" target="_blank" rel="noopener">Official full opinion (Library of Congress PDF)</a></p>
+</div>
+
+<h2>3. Court Opinion Elements</h2>
+<div class="content">
+  <button onclick="toggleContent('opinion')">Click to Show / Hide Elements</button>
+  <div id="opinion" class="hidden">
+    <ol>
+      <li><strong>Case Name:</strong> Loving v. Virginia (1967)</li>
+      <li><strong>Facts:</strong> An interracial couple — Richard and Mildred Loving — were criminally charged under Virginia's anti-miscegenation statute for marrying across racial lines.</li>
+      <li><strong>Procedural History:</strong> Convicted in state court; convictions later challenged and appealed up to the U.S. Supreme Court.</li>
+      <li><strong>Issue:</strong> Whether state bans on interracial marriage violate the Equal Protection and Due Process Clauses of the Fourteenth Amendment.</li>
+      <li><strong>Holding:</strong> Yes — such bans are unconstitutional.</li>
+      <li><strong>Reasoning:</strong> Marriage is a fundamental right; racial classifications that restrict marriage must meet strict scrutiny and were not justified by a compelling state interest.</li>
+      <li><strong>Disposition:</strong> Supreme Court reversed the convictions and invalidated race-based marriage prohibitions.</li>
+      <li><strong>Significance:</strong> Ended legal prohibitions on interracial marriage across the United States and reinforced constitutional protections against racial discrimination.</li>
+    </ol>
+  </div>
+</div>
+
+<h2>4. Bilingual Knowledge Base (Knowledge Network)</h2>
+<div class="content">
+  <p><strong>Search glossary (type an English term):</strong></p>
+  <input type="text" id="searchBox" placeholder="e.g. 'marriage'">
+  <button onclick="searchTerm()">Search</button>
+  <div id="searchResult" class="result"></div>
+
+  <h3>Legal Concepts Network</h3>
+  <div class="network-container">
+    <div class="network-node">
+      <h4>Constitutional Framework</h4>
+      <p><strong>constitution</strong> — 宪法</p>
+      <p><strong>amendment</strong> — 修正案</p>
+      <p><strong>Supreme Court</strong> — 最高法院</p>
+      <p><strong>jurisdiction</strong> — 管辖权</p>
+    </div>
+    
+    <div class="network-node">
+      <h4>Legal Rights & Protections</h4>
+      <p><strong>equal protection</strong> — 平等保护</p>
+      <p><strong>due process</strong> — 正当程序</p>
+      <p><strong>fundamental right</strong> — 基本权利</p>
+      <p><strong>civil rights</strong> — 公民权利</p>
+    </div>
+    
+    <div class="network-node">
+      <h4>Discrimination & Prohibition</h4>
+      <p><strong>racial discrimination</strong> — 种族歧视</p>
+      <p><strong>miscegenation</strong> — 异族通婚</p>
+      <p><strong>unconstitutional</strong> — 违宪的</p>
+      <p><strong>statute</strong> — 法规</p>
+    </div>
+    
+    <div class="network-node">
+      <h4>Legal Proceedings</h4>
+      <p><strong>plaintiff</strong> — 原告</p>
+      <p><strong>defendant</strong> — 被告</p>
+      <p><strong>appeal</strong> — 上诉</p>
+      <p><strong>precedent</strong> — 判例</p>
+      <p><strong>verdict</strong> — 裁决</p>
+    </div>
+    
+    <div class="network-node">
+      <h4>Judicial Elements</h4>
+      <p><strong>justice</strong> — 大法官</p>
+      <p><strong>opinion</strong> — 司法意见</p>
+      <p><strong>ruling</strong> — 裁定</p>
+    </div>
+  </div>
+
+  <h3>Legal Phrases Network</h3>
+  <div class="network-container">
+    <div class="network-node">
+      <h4>Violation & Enforcement</h4>
+      <p><strong>in violation of</strong> — 违反</p>
+      <p><strong>be sentenced to</strong> — 被判处</p>
+      <p><strong>find ... guilty</strong> — 认定……有罪</p>
+    </div>
+    
+    <div class="network-node">
+      <h4>Legal Actions</h4>
+      <p><strong>bring a case before the court</strong> — 提交法庭审理</p>
+      <p><strong>render a decision</strong> — 作出裁决</p>
+      <p><strong>strike down a law</strong> — 废止法律</p>
+    </div>
+    
+    <div class="network-node">
+      <h4>Constitutional Impact</h4>
+      <p><strong>declare unconstitutional</strong> — 宣布违宪</p>
+      <p><strong>grant equal rights</strong> — 赋予平等权利</p>
+      <p><strong>protect individual liberty</strong> — 保护个人自由</p>
+      <p><strong>set a precedent</strong> — 树立判例</p>
+    </div>
+  </div>
+
+  <h3>Key Quotes from the Opinion</h3>
+  <ol>
+    <li class="quote">"Marriage is one of the 'basic civil rights of man,' fundamental to our very existence and survival."</li>
+    <li class="quote">"To deny this freedom on so unsupportable a basis as the racial classifications embodied in these statutes is surely to deprive all the State's citizens of liberty without due process of law."</li>
+    <li class="quote">"The Fourteenth Amendment requires that the freedom of choice to marry not be restricted by invidious racial discriminations."</li>
+    <li class="quote">"Under our Constitution, the freedom to marry, or not marry, a person of another race resides with the individual and cannot be infringed by the State."</li>
+    <li class="quote">"These statutes also deprive the Lovings of liberty without due process of law in violation of the Due Process Clause of the Fourteenth Amendment."</li>
+  </ol>
+</div>
+
+<h2>5. Quiz: Test Your Understanding (5 questions)</h2>
+<div class="content">
+  <form id="quizForm">
+    <div class="quiz-item">
+      <p><strong>1.</strong> In which year was Loving v. Virginia decided?</p>
+      <label><input type="radio" name="q1" value="1967"> 1967</label><br>
+      <label><input type="radio" name="q1" value="1954"> 1954</label><br>
+      <label><input type="radio" name="q1" value="1973"> 1973</label>
+      <div id="feedback1" class="result"></div>
+    </div>
+
+    <div class="quiz-item">
+      <p><strong>2.</strong> Which constitutional clause was central to the decision?</p>
+      <label><input type="radio" name="q2" value="Equal Protection"> Equal Protection Clause</label><br>
+      <label><input type="radio" name="q2" value="Commerce"> Commerce Clause</label><br>
+      <label><input type="radio" name="q2" value="Establishment"> Establishment Clause</label>
+      <div id="feedback2" class="result"></div>
+    </div>
+
+    <div class="quiz-item">
+      <p><strong>3.</strong> What was the legal issue?</p>
+      <label><input type="radio" name="q3" value="Interracial Marriage"> Whether bans on interracial marriage violate the Fourteenth Amendment</label><br>
+      <label><input type="radio" name="q3" value="Search"> Whether searches require warrants</label><br>
+      <label><input type="radio" name="q3" value="Speech"> Whether speech is protected</label>
+      <div id="feedback3" class="result"></div>
+    </div>
+
+    <div class="quiz-item">
+      <p><strong>4.</strong> What did the Court conclude about marriage?</p>
+      <label><input type="radio" name="q4" value="Fundamental Right"> Marriage is a fundamental right</label><br>
+      <label><input type="radio" name="q4" value="Not Right"> Marriage is not a right</label><br>
+      <label><input type="radio" name="q4" value="Only State"> Only the state can decide marriage</label>
+      <div id="feedback4" class="result"></div>
+    </div>
+
+    <div class="quiz-item">
+      <p><strong>5.</strong> What was the practical effect of the ruling?</p>
+      <label><input type="radio" name="q5" value="Invalidate Laws"> Invalidated race-based marriage bans across the U.S.</label><br>
+      <label><input type="radio" name="q5" value="Increase Tax"> Increased federal taxes</label><br>
+      <label><input type="radio" name="q5" value="Start War"> Started a war</label>
+      <div id="feedback5" class="result"></div>
+    </div>
+
+    <button type="button" onclick="gradeQuiz()">Submit Quiz</button>
+  </form>
+  <div id="quizResult" class="result"></div>
+</div>
+
+<footer>
+  <p>Source: Official opinion available via Library of Congress. This page includes a short excerpt for classroom use and links to the authoritative PDF.</p>
+</footer>
+
+<script>
+function toggleContent(id) {
+  const el = document.getElementById(id);
+  el.classList.toggle('hidden');
+}
+
+function searchTerm() {
+  const keyword = document.getElementById("searchBox").value.trim().toLowerCase();
+  const terms = document.querySelectorAll('.network-node p');
+  let out = '';
+  terms.forEach(t => {
+    if (t.textContent.toLowerCase().includes(keyword) || keyword === '') {
+      out += t.outerHTML;
+    }
+  });
+  document.getElementById('searchResult').innerHTML = out || 'No match found.';
+}
+
+function gradeQuiz() {
+  const answers = {
+    q1: '1967',
+    q2: 'Equal Protection',
+    q3: 'Interracial Marriage',
+    q4: 'Fundamental Right',
+    q5: 'Invalidate Laws'
+  };
+  
+  const quotes = {
+    q1: "The case was decided in 1967, establishing a landmark precedent for civil rights.",
+    q2: "The Court held that the Virginia law violated the <span class='highlight'>Equal Protection Clause</span> of the Fourteenth Amendment.",
+    q3: "The central issue was whether <span class='highlight'>bans on interracial marriage violate the Fourteenth Amendment</span>.",
+    q4: "The Court stated: '<span class='highlight'>Marriage is one of the basic civil rights of man</span>, fundamental to our very existence and survival.'",
+    q5: "The ruling <span class='highlight'>invalidated race-based marriage prohibitions</span> across the United States."
+  };
+  
+  let score = 0;
+  
+  for (let i=1;i<=5;i++) {
+    const q = document.querySelector('input[name="q'+i+'"]:checked');
+    const feedbackDiv = document.getElementById('feedback'+i);
+    
+    if (q) {
+      if (q.value === answers['q'+i]) {
+        score++;
+        feedbackDiv.innerHTML = "<span class='correct-answer'>✓ Correct!</span> " + quotes['q'+i];
+      } else {
+        feedbackDiv.innerHTML = "<span class='incorrect-answer'>✗ Incorrect.</span> The correct answer is: " + 
+          answers['q'+i] + ". " + quotes['q'+i];
+      }
+    } else {
+      feedbackDiv.innerHTML = "<span class='incorrect-answer'>No answer selected.</span> The correct answer is: " + 
+        answers['q'+i] + ". " + quotes['q'+i];
+    }
+  }
+  
+  const resultDiv = document.getElementById('quizResult');
+  resultDiv.innerHTML = `<h3>Quiz Results: ${score}/5</h3>`;
+  if (score === 5) {
+    resultDiv.innerHTML += '<p>Excellent! You have a thorough understanding of Loving v. Virginia.</p>';
+  } else if (score >= 3) {
+    resultDiv.innerHTML += '<p>Good job! Review the highlighted concepts to strengthen your understanding.</p>';
+  } else {
+    resultDiv.innerHTML += '<p>Consider reviewing the Court Opinion section and key quotes again.</p>';
+  }
+}
+</script>
+
+</body>
+</html>
